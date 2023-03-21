@@ -1,0 +1,18 @@
+create db named "openCourse"
+
+------------ Create admin table ------------
+
+CREATE TABLE `admin` (`admn_sl` INT NOT NULL AUTO_INCREMENT , `admin_email` VARCHAR(50) NOT NULL , `admin_pwd` VARCHAR(255) NOT NULL , `admin_tstamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`admn_sl`)) ENGINE = InnoDB;
+
+------------ Dumping values into admin table -----------------
+
+INSERT INTO `admin` (`admn_sl`, `admin_email`, `admin_pwd`, `admin_tstamp`) VALUES (NULL, 'faculty@mail.com', 'Faculty1234', current_timestamp());
+
+
+------------ Create table students --------------------------
+
+CREATE TABLE `students` (`slno` INT NOT NULL AUTO_INCREMENT , `student_name` VARCHAR(255) NOT NULL , `student_password` VARCHAR(255) NOT NULL , `course_id` INT NOT NULL , `student_tstamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`slno`)) ENGINE = InnoDB;
+
+-------------Create table courses ----------------------------
+
+CREATE TABLE `courses` (`course_id` VARCHAR(255) NOT NULL , `course_name` VARCHAR(255) NOT NULL , `instructor_name` VARCHAR(255) NOT NULL , `course_description` VARCHAR(255) NOT NULL , `tstamp` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`course_id`)) ENGINE = InnoDB;
